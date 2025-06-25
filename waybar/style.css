@@ -1,0 +1,53 @@
+* {
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 13px;
+  border: none;
+  box-shadow: none;
+  transition: 0.2s ease-in-out;
+}
+
+window#waybar {
+  background: rgba(20, 20, 30, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(8px);       /* Blur the wallpaper behind the bar */
+  color: #ffffff;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0 10px;
+  background: transparent;
+  color: #cba6f7;
+  border-radius: 6px;
+  margin: 0 3px;
+}
+
+#workspaces button.active {
+  background: rgba(203, 166, 247, 0.8); /* Soft purple background */
+  color: #1a1b26;
+}
+
+/* Clock = Purple */
+#clock {
+  background: rgba(203, 166, 247, 0.8); /* Soft purple */
+  color: #1a1b26;
+  padding: 0 10px;
+  margin: 0 4px;
+  border-radius: 10px;
+}
+
+/* Audio, Brightness, Tray = Green */
+#pulseaudio,
+#backlight,
+#battery,
+#tray {
+  background: rgba(166, 227, 161, 0.8); /* Pastel green */
+  color: #1a1b26;
+  padding: 0 10px;
+  margin: 0 4px;
+  border-radius: 10px;
+}
+
+/* Charging battery = purple for emphasis */
+#battery.charging {
+  background: rgba(203, 166, 247, 0.8);
+}
