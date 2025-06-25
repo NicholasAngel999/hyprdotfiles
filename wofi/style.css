@@ -1,0 +1,33 @@
+* {
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+window {
+  background-color: rgba(30, 30, 40, 0.8); /* blurred by Hyprland */
+  border: 2px solid #cba6f7;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+#input {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid #a6e3a1;
+  border-radius: 10px;
+  background-color: rgba(20, 20, 30, 0.6);
+  color: #ffffff;
+}
+
+#entry {
+  padding: 6px 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+}
+
+#entry:selected {
+  background-color: rgba(203, 166, 247, 0.8); /* soft purple */
+  color: #1a1b26;
+}
