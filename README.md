@@ -21,3 +21,5 @@ Clone the repo:
 git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash setup.sh
+```
+
