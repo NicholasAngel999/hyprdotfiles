@@ -7,11 +7,15 @@ hyprland dot files including wofi, waybar, swaylock, hyprpaper and more
 My personal dotfiles for Hyprland-based setups. Includes configuration for:
 
 - Hyprland
+- hyprlock
+- hyprpaper
+- hypridle
+- starship
 - Waybar
 - Dunst
-- Rofi
+- Wofi
 - Shell (`.bashrc` / `.zshrc`)
-- Fonts & wallpapers
+- wallpaper
 
 ## 🔧 Setup
 
