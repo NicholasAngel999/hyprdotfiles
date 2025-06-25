@@ -1,0 +1,39 @@
+[global]
+monitor = 0
+follow = mouse
+width = (0, 300)
+height = 100
+offset = 20x20
+origin = top-right
+corner_radius = 12
+padding = 16
+frame_width = 0
+separator_height = 2
+font = JetBrainsMono Nerd Font 10
+line_height = 4
+markup = full
+transparency = 10
+idle_threshold = 120
+history_length = 20
+show_indicators = no
+word_wrap = yes
+ignore_newline = no
+mouse_left_click = close_current
+mouse_middle_click = do_action
+mouse_right_click = close_all
+
+[urgency_low]
+background = "#00000080"
+foreground = "#a6e3a1"
+timeout = 3
+
+[urgency_normal]
+background = "#1e1e2e90"
+foreground = "#ffffff"
+timeout = 5
+
+[urgency_critical]
+background = "#cba6f7cc"
+foreground = "#1a1b26"
+frame_color = "#cba6f7"
+timeout = 0
