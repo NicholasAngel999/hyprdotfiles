@@ -1,65 +1,53 @@
-* {
-  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
-  font-size: 14px;
-  border: none;
-  border-radius: 12px;
-  padding: 2px 8px;
-  margin: 0;
-  min-height: 0;
-  color: #d3e4cd; /* pastel green */
-  background: transparent;
-}
-
 window#waybar {
-  background-color: rgba(30, 30, 46, 0.3); /* semi-transparent purple-black */
-  border-radius: 20px;
-  border: 1px solid rgba(179, 136, 255, 0.4); /* soft purple border */
+  background-color: rgba(30, 30, 46, 0.25);
+  border-radius: 15px;
   margin: 6px 10px;
-  padding: 4px 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  color: #d0d0d0;
 }
 
-/* Modules */
 #workspaces button {
-  color: #e0e0e0;
-  background: rgba(255, 255, 255, 0.05);
-  margin: 2px 4px;
-  padding: 4px 8px;
+  background: transparent;
   border-radius: 10px;
-  transition: background 0.3s ease;
+  padding: 6px 10px;
+  margin: 0 6px;
+  color: #bbb;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.active {
-  background: rgba(179, 136, 255, 0.4); /* active workspace - purple */
-  color: #ffffff;
+  background: rgba(179, 136, 255, 0.5);
+  color: #fff;
 }
 
 #workspaces button:hover {
   background: rgba(179, 136, 255, 0.25);
+  color: #e0d7f7;
 }
 
 #clock,
 #pulseaudio,
 #battery,
-#network,
-#tray {
+#network {
+  padding: 4px 12px;
+  margin-left: 8px;
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 6px 10px;
-  margin: 0 4px;
   border-radius: 12px;
 }
 
-/* Optional: rounded tray icons */
-#tray {
-  background-color: rgba(179, 136, 255, 0.1);
-  padding: 5px;
-}
-
-/* Hover Effects */
 #clock:hover,
 #pulseaudio:hover,
 #battery:hover,
 #network:hover {
   background-color: rgba(179, 136, 255, 0.2);
-  transition: background 0.2s ease-in-out;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+#tray {
+  margin-left: 10px;
+  background: transparent;
 }
