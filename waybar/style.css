@@ -1,53 +1,65 @@
 * {
-  font-family: JetBrainsMono Nerd Font, monospace;
-  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 14px;
   border: none;
-  box-shadow: none;
-  transition: 0.2s ease-in-out;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 0;
+  min-height: 0;
+  color: #d3e4cd; /* pastel green */
+  background: transparent;
 }
 
 window#waybar {
-  background: rgba(20, 20, 30, 0.2); /* Semi-transparent background */
-  backdrop-filter: blur(8px);       /* Blur the wallpaper behind the bar */
-  color: #ffffff;
+  background-color: rgba(30, 30, 46, 0.3); /* semi-transparent purple-black */
+  border-radius: 20px;
+  border: 1px solid rgba(179, 136, 255, 0.4); /* soft purple border */
+  margin: 6px 10px;
+  padding: 4px 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Workspaces */
+/* Modules */
 #workspaces button {
-  padding: 0 10px;
-  background: transparent;
-  color: #cba6f7;
-  border-radius: 6px;
-  margin: 0 3px;
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 2px 4px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
 }
 
 #workspaces button.active {
-  background: rgba(203, 166, 247, 0.8); /* Soft purple background */
-  color: #1a1b26;
+  background: rgba(179, 136, 255, 0.4); /* active workspace - purple */
+  color: #ffffff;
 }
 
-/* Clock = Purple */
-#clock {
-  background: rgba(203, 166, 247, 0.8); /* Soft purple */
-  color: #1a1b26;
-  padding: 0 10px;
-  margin: 0 4px;
-  border-radius: 10px;
+#workspaces button:hover {
+  background: rgba(179, 136, 255, 0.25);
 }
 
-/* Audio, Brightness, Tray = Green */
+#clock,
 #pulseaudio,
-#backlight,
 #battery,
+#network,
 #tray {
-  background: rgba(166, 227, 161, 0.8); /* Pastel green */
-  color: #1a1b26;
-  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
   margin: 0 4px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* Charging battery = purple for emphasis */
-#battery.charging {
-  background: rgba(203, 166, 247, 0.8);
+/* Optional: rounded tray icons */
+#tray {
+  background-color: rgba(179, 136, 255, 0.1);
+  padding: 5px;
+}
+
+/* Hover Effects */
+#clock:hover,
+#pulseaudio:hover,
+#battery:hover,
+#network:hover {
+  background-color: rgba(179, 136, 255, 0.2);
+  transition: background 0.2s ease-in-out;
 }
