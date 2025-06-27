@@ -6,7 +6,7 @@ window#waybar {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
-  color: #d0d0d0;
+  color: #b0f5c2; /* pastel green */
 }
 
 #workspaces button {
@@ -14,18 +14,18 @@ window#waybar {
   border-radius: 10px;
   padding: 6px 10px;
   margin: 0 6px;
-  color: #bbb;
+  color: #b0f5c2;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.active {
-  background: rgba(179, 136, 255, 0.5);
-  color: #fff;
+  background: rgba(203, 166, 247, 0.5); /* soft purple */
+  color: #ffffff;
 }
 
 #workspaces button:hover {
-  background: rgba(179, 136, 255, 0.25);
-  color: #e0d7f7;
+  background: rgba(203, 166, 247, 0.25); /* lighter purple hover */
+  color: #ffffff;
 }
 
 #clock,
@@ -36,14 +36,15 @@ window#waybar {
   margin-left: 8px;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
+  color: #b0f5c2;
 }
 
 #clock:hover,
 #pulseaudio:hover,
 #battery:hover,
 #network:hover {
-  background-color: rgba(179, 136, 255, 0.2);
-  color: #fff;
+  background-color: rgba(203, 166, 247, 0.2);
+  color: #ffffff;
   transition: background 0.2s ease;
 }
 
