@@ -1,33 +1,36 @@
 * {
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 14px;
-  color: #ffffff;
+  color: #b0f5c2; /* pastel green */
   background-color: transparent;
 }
 
 window {
-  background-color: rgba(30, 30, 40, 0.8); /* blurred by Hyprland */
-  border: 2px solid #cba6f7;
+  background-color: rgba(20, 20, 30, 0.25); /* more transparent for glass effect */
+  border: 2px solid #cba6f7; /* soft purple border */
   border-radius: 16px;
   padding: 20px;
+  backdrop-filter: blur(15px); /* glossy glass effect */
 }
 
 #input {
   margin-bottom: 12px;
   padding: 8px 12px;
-  border: 1px solid #a6e3a1;
+  border: 1px solid #b0f5c2; /* pastel green border */
   border-radius: 10px;
-  background-color: rgba(20, 20, 30, 0.6);
-  color: #ffffff;
+  background-color: rgba(20, 20, 30, 0.35); /* lighter background for glass feel */
+  color: #b0f5c2;
 }
 
 #entry {
   padding: 6px 10px;
   margin: 4px 0;
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03); /* subtle background to show spacing */
+  color: #b0f5c2;
 }
 
 #entry:selected {
-  background-color: rgba(203, 166, 247, 0.8); /* soft purple */
-  color: #1a1b26;
+  background-color: rgba(203, 166, 247, 0.3); /* soft purple highlight */
+  color: #ffffff;
 }
