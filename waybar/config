@@ -4,8 +4,7 @@
   "height": 30,
   "margin": 6,
   "modules-left": [
-    "workspaces",
-    "tray"
+    "workspaces"
   ],
   "modules-center": [
     "clock"
@@ -13,7 +12,9 @@
   "modules-right": [
     "pulseaudio",
     "battery",
-    "network"
+    "network",
+    "bluetooth", 
+    "brightnessctl"
   ],
   "workspaces": {
     "format": "{icon} {name}",
