@@ -22,7 +22,7 @@ My personal dotfiles for Hyprland-based setups. Includes configuration for:
 Clone the repo:
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+git clone https://github.com/NicholasAngel/hyprdotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash setup.sh
 ```
