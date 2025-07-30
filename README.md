@@ -12,7 +12,7 @@ My personal dotfiles for Hyprland-based setups. Includes configuration for:
 - hypridle
 - starship
 - Waybar
-- Dunst
+- swaync
 - Wofi
 - Shell (`.bashrc` / `.zshrc`)
 - wallpaper
