@@ -3,7 +3,7 @@
 set -e
 
 echo "📦 Installing required packages..."
-sudo pacman -S --noconfirm waybar dunst wofi hyprland rofi kitty \
+sudo pacman -S --noconfirm waybar swaync wofi hyprland rofi kitty yazi nautilus hyprlock \
     ttf-jetbrains-mono-nerd ttf-font-awesome brightnessctl network-manager-applet swaybg
 
 echo "📁 Creating config directories..."
