@@ -1,29 +1,7 @@
-# hyprdotfiles
-hyprland dot files including wofi, waybar, swaylock, hyprpaper and more
+# Arch pacman install 
+sudo pacman -S hyprland waybar starship neovim wofi hyprlock hyprpaper hypridle \
+brightnessctl playerctl jq pamixer networkmanager upower noto-fonts noto-fonts-emoji \
+ttf-font-awesome
 
 
-# Dotfiles for Hyprland and Wayland
-
-My personal dotfiles for Hyprland-based setups. Includes configuration for:
-
-- Hyprland
-- hyprlock
-- hyprpaper
-- hypridle
-- starship
-- Waybar
-- swaync
-- Wofi
-- Shell (`.bashrc` / `.zshrc`)
-- wallpaper
-
-## 🔧 Setup
-
-Clone the repo:
-
-```bash
-git clone https://github.com/NicholasAngel/hyprdotfiles.git ~/dotfiles
-cd ~/dotfiles
-bash setup.sh
-```
 
