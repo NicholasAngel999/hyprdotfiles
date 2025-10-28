@@ -1,68 +1,66 @@
-:root {
-  --bg: rgba(15, 20, 20, 0.85); /* deeper opacity for legibility */
-  --fg: #d9f9e4; /* soft mint text */
-  --accent: #cba6f7; /* pastel purple highlight */
-  --accent2: #a6e3a1; /* pastel green accent */
-}
 
-* {
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 14px;
-  color: var(--fg);
-  background-color: transparent;
-}
+@define-color base     #1a1b26; /* Dark Background */
+@define-color surface0 #24283b; /* Slightly Lighter Background */
+@define-color text     #c0caf5; /* Main Text */
+@define-color subtext  #a9b1d6; /* Secondary Text */
+@define-color green    #86aa71; /* Jade Green Accent */
+@define-color teal     #71aaa7; /* Jade Teal Accent */
+@define-color red      #f7768e; /* Red for errors or highlights */
 
+/* --- Main Window --- */
 window {
-  background-color: var(--bg);
-  border: 2px solid var(--accent);
-  border-radius: 16px;
-  padding: 20px;
-  backdrop-filter: blur(20px) saturate(140%);
-  box-shadow: 0 0 15px rgba(203, 166, 247, 0.25);
+    background-color: rgba(26, 27, 38, 0.9); /* @base with transparency */
+    border: 2px solid @green;
+    border-radius: 14px; /* Rounded corners */
+    font-family: "MesloLGS Nerd Font Mono Bold"; /* Match Waybar */
+    font-size: 15px;
 }
 
-/* --- Input box --- */
+/* --- Search Input --- */
 #input {
-  margin-bottom: 12px;
-  padding: 8px 12px;
-  border: 1px solid var(--accent2);
-  border-radius: 10px;
-  background-color: rgba(30, 40, 40, 0.9);
-  color: var(--fg);
-  transition: border 0.2s, box-shadow 0.2s;
+    background-color: @surface0;
+    color: @text;
+    padding: 8px 12px;
+    margin: 10px;
+    border: 1px solid @teal;
+    border-radius: 10px; /* Slightly rounded input */
 }
 
-#input:focus {
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 8px rgba(203, 166, 247, 0.4);
+/* --- Inner Box (holds results) --- */
+#inner-box {
+    margin: 5px;
+    padding: 10px;
 }
 
-/* --- Entry list --- */
+/* --- Scroll Window --- */
+#scroll {
+    margin-top: 5px;
+}
+
+/* --- Individual Result Entries --- */
 #entry {
-  padding: 6px 10px;
-  margin: 4px 0;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
-  transition: background 0.15s, color 0.15s;
-}
-
-#entry:hover {
-  background-color: rgba(203, 166, 247, 0.15);
+    padding: 8px 10px;
+    border-radius: 10px; /* Rounded entries */
+    color: @subtext;
 }
 
 #entry:selected {
-  background-color: rgba(203, 166, 247, 0.35); /* soft purple highlight */
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(203, 166, 247, 0.4);
+    background-color: @green;
+    color: @base; /* Dark text on selected */
+    outline: none;
 }
 
-/* --- Scrollbar (optional aesthetic tweak) --- */
-scrollbar {
-  background: transparent;
+/* --- Text within Entries --- */
+#text {
+    color: @text; /* Ensure main text uses the primary text color */
+    margin-left: 10px;
 }
 
-scrollbar slider {
-  background: rgba(203, 166, 247, 0.3);
-  border-radius: 8px;
+#text:selected {
+    color: @base;
 }
 
+/* --- Icons (if enabled in wofi config/args) --- */
+#img {
+    margin-right: 10px;
+}

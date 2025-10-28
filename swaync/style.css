@@ -1,0 +1,70 @@
+/* ~/.config/swaync/style.css */
+@define-color bg-base #1a1b26;
+@define-color bg-surface #24283b;
+@define-color bg-crust #15161e;
+@define-color text-base #c0caf5;
+@define-color text-sub #a9b1d6;
+@define-color accent-green #86aa71;
+@define-color accent-red #f7768e;
+
+.notification-row {
+  background-color: @bg-surface;
+  border: 1px solid @accent-green;
+  border-radius: 12px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.notification-row:hover {
+  background-color: @bg-base;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: @text-base;
+}
+
+.app-name {
+  color: @text-sub;
+  font-weight: bold;
+}
+
+.body {
+  color: @text-sub;
+  font-weight: normal;
+}
+
+.control-center {
+  background-color: @bg-base;
+  border: 2px solid @accent-green;
+  border-radius: 12px;
+}
+
+.control-center .widget-title {
+  color: @text-base;
+  font-size: 1.2em;
+  padding: 8px;
+}
+
+.control-center .widget-dnd {
+  background-color: @bg-surface;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.control-center .widget-dnd > switch {
+  background-color: @accent-green;
+}
+
+.widget-title button {
+  background-color: @accent-red;
+  color: @bg-crust;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.widget-title button:hover {
+  background-color: shade(@accent-red, 0.8);
+}

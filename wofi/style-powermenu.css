@@ -1,0 +1,64 @@
+/* ~/.config/wofi/style-powermenu.css */
+/* Compact Osaka Jade theme for Power Menu - NO COMMENTS */
+
+@define-color base     rgba(26, 27, 38, 0.95);
+@define-color surface0 #24283b;
+@define-color text     #c0caf5;
+@define-color subtext  #a9b1d6;
+@define-color green    #86aa71;
+@define-color teal     #71aaa7;
+
+window {
+    background-color: @base;
+    border: 2px solid @green;
+    border-radius: 12px;
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 15px;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 5px;
+}
+
+#input {
+    background-color: transparent;
+    color: @text;
+    padding: 8px 10px;
+    margin: 0 5px 5px 5px;
+    border: none;
+    border-bottom: 1px solid @teal;
+    border-radius: 0;
+}
+
+#inner-box {
+    margin: 5px 0 0 0;
+    padding: 5px;
+}
+
+#scroll {
+    margin-top: 0;
+}
+
+#entry {
+    padding: 6px 8px;
+    margin: 2px 0;
+    border-radius: 8px;
+    color: @text;
+}
+
+#entry:selected {
+    background-color: @green;
+    color: @base;
+    outline: none;
+}
+
+#text {
+    margin-left: 10px;
+}
+
+#text:selected {
+    color: @base;
+}
+
+#img {
+  margin-right: 5px;
+}
