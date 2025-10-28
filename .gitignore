@@ -1,0 +1,26 @@
+# 1. Ignore EVERYTHING by default
+*
+
+# 2. But... DO NOT ignore the .gitignore file itself
+!.gitignore
+
+# 3. DO NOT ignore the specific folders we WANT to save
+# (The '!' un-ignores the file or folder)
+!/hypr/
+!/hypr/*
+!/hypridle.conf
+
+!/waybar/
+!/waybar/**
+
+!/wofi/
+!/wofi/**
+
+!/swaync/
+!/swaync/**
+
+!/kitty/
+!/kitty/**
+
+!/nvim/
+!/nvim/**

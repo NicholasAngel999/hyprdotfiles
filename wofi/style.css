@@ -1,0 +1,68 @@
+:root {
+  --bg: rgba(15, 20, 20, 0.85); /* deeper opacity for legibility */
+  --fg: #d9f9e4; /* soft mint text */
+  --accent: #cba6f7; /* pastel purple highlight */
+  --accent2: #a6e3a1; /* pastel green accent */
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  color: var(--fg);
+  background-color: transparent;
+}
+
+window {
+  background-color: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 0 15px rgba(203, 166, 247, 0.25);
+}
+
+/* --- Input box --- */
+#input {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--accent2);
+  border-radius: 10px;
+  background-color: rgba(30, 40, 40, 0.9);
+  color: var(--fg);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#input:focus {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 8px rgba(203, 166, 247, 0.4);
+}
+
+/* --- Entry list --- */
+#entry {
+  padding: 6px 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background 0.15s, color 0.15s;
+}
+
+#entry:hover {
+  background-color: rgba(203, 166, 247, 0.15);
+}
+
+#entry:selected {
+  background-color: rgba(203, 166, 247, 0.35); /* soft purple highlight */
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(203, 166, 247, 0.4);
+}
+
+/* --- Scrollbar (optional aesthetic tweak) --- */
+scrollbar {
+  background: transparent;
+}
+
+scrollbar slider {
+  background: rgba(203, 166, 247, 0.3);
+  border-radius: 8px;
+}
+
