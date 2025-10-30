@@ -1,70 +1,138 @@
 /* ~/.config/swaync/style.css */
-@define-color bg-base #1a1b26;
-@define-color bg-surface #24283b;
-@define-color bg-crust #15161e;
-@define-color text-base #c0caf5;
-@define-color text-sub #a9b1d6;
-@define-color accent-green #86aa71;
-@define-color accent-red #f7768e;
+/* OSAKA JADE THEME for SwayNC */
 
-.notification-row {
-  background-color: @bg-surface;
-  border: 1px solid @accent-green;
-  border-radius: 12px;
-  margin: 8px;
-  padding: 8px;
+/* --- Define Colors (Match Waybar/Wofi) --- */
+@define-color base     rgba(26, 27, 38, 0.95); /* Dark Transparent Background */
+@define-color surface0 rgba(36, 40, 59, 0.95); /* Slightly Lighter Surface */
+@define-color crust    #15161e;
+@define-color text     #c0caf5; /* Main Text */
+@define-color subtext  #a9b1d6; /* Secondary Text */
+@define-color green    #86aa71; /* Jade Green Accent */
+@define-color teal     #71aaa7; /* Jade Teal Accent */
+@define-color red      #f7768e; /* Red for Critical/Actions */
+@define-color overlay0 #4a517d; /* Muted border */
+
+/* --- Notification Popups --- */
+.notification-window {
+    background-color: transparent; /* Make window itself transparent */
 }
 
-.notification-row:hover {
-  background-color: @bg-base;
+.notification {
+    background-color: @base;
+    border: 2px solid @green; /* Main accent border */
+    border-radius: 12px;      /* Rounded corners */
+    margin: 8px;              /* Spacing between notifications */
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 14px;
+}
+
+/* Style critical notifications differently */
+.notification.critical {
+    border: 2px solid @red;
+}
+
+.notification-content {
+    padding: 5px;
 }
 
 .title {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: @text-base;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: @text;
 }
 
 .app-name {
-  color: @text-sub;
-  font-weight: bold;
+    color: @teal; /* Use teal for app name */
+    font-weight: bold;
+    margin-bottom: 4px; /* Space below app name */
 }
 
 .body {
-  color: @text-sub;
-  font-weight: normal;
+    color: @subtext;
+    font-weight: normal;
 }
 
+/* Close button */
+.close-button {
+    background-color: @surface0;
+    color: @red;
+    border-radius: 50%; /* Make it round */
+    min-width: 24px;
+    min-height: 24px;
+    margin-left: 10px;
+}
+.close-button:hover {
+    background-color: @red;
+    color: @crust;
+}
+
+/* Action buttons within notifications */
+.notification-actions button {
+    background-color: @surface0;
+    color: @teal;
+    border: 1px solid @teal;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 5px;
+    font-weight: bold;
+}
+.notification-actions button:hover {
+    background-color: @teal;
+    color: @base;
+}
+
+/* --- Control Center (Notification History) --- */
 .control-center {
-  background-color: @bg-base;
-  border: 2px solid @accent-green;
-  border-radius: 12px;
+    background-color: @base;
+    border: 2px solid @green;
+    border-radius: 12px;
 }
 
 .control-center .widget-title {
-  color: @text-base;
-  font-size: 1.2em;
-  padding: 8px;
+    color: @text;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid @surface0;
 }
 
+/* Control center uses the same .notification style */
+.control-center .notification {
+    background-color: @surface0; /* Slightly different background for history */
+    border: 1px solid @overlay0; /* More muted border */
+    box-shadow: none; /* No shadow needed inside */
+}
+
+/* Style DND widget */
 .control-center .widget-dnd {
-  background-color: @bg-surface;
-  border-radius: 8px;
-  margin: 8px;
-  padding: 8px;
+    background-color: @surface0;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 8px;
 }
-
 .control-center .widget-dnd > switch {
-  background-color: @accent-green;
+    background-color: @overlay0; /* Color for the 'off' state (e.g., a muted grey) */
+    color: @surface0; /* Color of the little circle/slider when off */
+    border-radius: 12px; /* Optional: Ensure consistent rounding */
 }
 
+.control-center .widget-dnd > switch:checked {
+    background-color: @green; /* Color for the 'on' state */
+    color: @base; /* Color of the little circle/slider when on */
+}
+
+/* Clear All button */
 .widget-title button {
-  background-color: @accent-red;
-  color: @bg-crust;
-  border-radius: 8px;
-  font-weight: bold;
+    background-color: @red;
+    color: @crust;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 4px 8px;
+    margin-right: 5px;
 }
-
 .widget-title button:hover {
-  background-color: shade(@accent-red, 0.8);
+    background-color: shade(@red, 0.8);
 }

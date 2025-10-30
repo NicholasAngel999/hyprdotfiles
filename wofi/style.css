@@ -40,6 +40,7 @@ window {
 /* --- Individual Result Entries --- */
 #entry {
     padding: 8px 10px;
+    min-height: 40px;
     border-radius: 10px; /* Rounded entries */
     color: @subtext;
 }
@@ -63,4 +64,15 @@ window {
 /* --- Icons (if enabled in wofi config/args) --- */
 #img {
     margin-right: 10px;
+}
+
+/* ~/.config/wofi/style.css */
+
+/* --- Images/Icons --- */
+#img {
+  margin-right: 12px; /* Space between the icon and the app name */
+  min-height: 24px;   /* Minimum size for the icon container */
+  min-width: 24px;    /* Keeps icon centered if it's smaller */
+  padding-left: 5px;  /* Slight padding to push the icon away from the left edge */
+  border-radius: 4px; /* Optional: adds a very subtle roundness to the icon */
 }
