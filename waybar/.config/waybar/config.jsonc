@@ -11,10 +11,22 @@
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "tray", "custom/power"],
 
-    "hyprland/workspaces": {
+"hyprland/workspaces": {
         "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
     
     "clock": {
@@ -34,7 +46,8 @@
     "network": {
         "format-wifi": "{essid} ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "kitty --class nmtui-floating -e nmtui"
     },
 
     "battery": {

@@ -1,18 +1,21 @@
+/* ~/.config/wofi/style.css */
+/* 212th ATTACK BATTALION THEME (Commander Cody) */
 
-@define-color base     #1a1b26; /* Dark Background */
-@define-color surface0 #24283b; /* Slightly Lighter Background */
-@define-color text     #c0caf5; /* Main Text */
-@define-color subtext  #a9b1d6; /* Secondary Text */
-@define-color green    #86aa71; /* Jade Green Accent */
-@define-color teal     #71aaa7; /* Jade Teal Accent */
-@define-color red      #f7768e; /* Red for errors or highlights */
+/* --- Define Colors --- */
+@define-color base      #1a1b26; /* TokyoNight Dark */
+@define-color surface0  #24283b; 
+@define-color text      #c0caf5; 
+@define-color subtext   #a9b1d6; 
+@define-color cody_orange #ff9800; /* Solar Orange */
+@define-color cody_amber  #ffcc80; /* Highlight Amber */
+@define-color red       #f7768e; 
 
 /* --- Main Window --- */
 window {
-    background-color: rgba(26, 27, 38, 0.9); /* @base with transparency */
-    border: 2px solid @green;
-    border-radius: 14px; /* Rounded corners */
-    font-family: "MesloLGS Nerd Font Mono Bold"; /* Match Waybar */
+    background-color: rgba(26, 27, 38, 0.95); 
+    border: 2px solid @cody_orange; /* Orange border matching Waybar capsule */
+    border-radius: 15px;            /* Rounded corners matching the UI */
+    font-family: "JetBrainsMono Nerd Font", "MesloLGS NF"; 
     font-size: 15px;
 }
 
@@ -22,57 +25,50 @@ window {
     color: @text;
     padding: 8px 12px;
     margin: 10px;
-    border: 1px solid @teal;
-    border-radius: 10px; /* Slightly rounded input */
+    border: 1px solid @cody_amber; /* Amber border for the search bar */
+    border-radius: 10px; 
 }
 
-/* --- Inner Box (holds results) --- */
+/* --- Results Box --- */
 #inner-box {
     margin: 5px;
     padding: 10px;
 }
 
-/* --- Scroll Window --- */
 #scroll {
     margin-top: 5px;
 }
 
-/* --- Individual Result Entries --- */
+/* --- Individual Entries --- */
 #entry {
     padding: 8px 10px;
     min-height: 40px;
-    border-radius: 10px; /* Rounded entries */
+    border-radius: 10px; 
     color: @subtext;
 }
 
 #entry:selected {
-    background-color: @green;
-    color: @base; /* Dark text on selected */
+    background-color: @cody_orange; /* Highlight in Orange */
+    color: @base;                   /* Dark text for readability */
     outline: none;
 }
 
-/* --- Text within Entries --- */
+/* --- Text Styling --- */
 #text {
-    color: @text; /* Ensure main text uses the primary text color */
+    color: @text; 
     margin-left: 10px;
 }
 
 #text:selected {
     color: @base;
+    font-weight: bold;
 }
 
-/* --- Icons (if enabled in wofi config/args) --- */
+/* --- Icons --- */
 #img {
-    margin-right: 10px;
-}
-
-/* ~/.config/wofi/style.css */
-
-/* --- Images/Icons --- */
-#img {
-  margin-right: 12px; /* Space between the icon and the app name */
-  min-height: 24px;   /* Minimum size for the icon container */
-  min-width: 24px;    /* Keeps icon centered if it's smaller */
-  padding-left: 5px;  /* Slight padding to push the icon away from the left edge */
-  border-radius: 4px; /* Optional: adds a very subtle roundness to the icon */
+  margin-right: 12px; 
+  min-height: 24px;   
+  min-width: 24px;    
+  padding-left: 5px;  
+  border-radius: 4px; 
 }

@@ -1,68 +1,33 @@
+/* --- Floating Capsule Theme --- */
+
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 15px;
     border: none;
-    border-radius: 0;
+    border-radius: 12px; /* Adds rounded corners to all modules */
+    font-family: "JetBrainsMono Nerd Font", "MesloLGS NF", sans-serif;
+    font-size: 15px;
     min-height: 0;
 }
 
-/* Base transparent floating bar */
 window#waybar {
-    background-color: rgba(26, 27, 38, 0.85); /* Dark base with transparency */
-    border: 2px solid #86aa71; /* Jade Green border */
-    border-radius: 14px;
-    color: #c0caf5; /* Main text */
-}
-
-/* Workspaces */
-#workspaces button {
-    padding: 0 10px;
-    color: #a9b1d6; /* Subtext */
-    border-radius: 10px;
-}
-
-#workspaces button:hover {
-    background-color: rgba(113, 170, 167, 0.2); /* Teal hover */
-}
-
-#workspaces button.active {
-    color: #1a1b26; /* Dark text */
-    background-color: #86aa71; /* Solid green for active */
-}
-
-/* Module Spacing & Colors */
-#clock,
-#pulseaudio,
-#network,
-#battery,
-#custom-power,
-#tray {
-    padding: 0 12px;
-    margin: 4px 0;
+    background-color: rgba(26, 27, 38, 0.85); /* TokyoNight Dark */
+    border: 2px solid #ff9800;                 /* Orange wraps ALL the way around */
+    border-radius: 15px;                       /* Smooth rounded corners for the bar */
     color: #c0caf5;
+    margin: 10px 15px;                         /* Adds space around the bar so it "floats" */
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-#clock {
-    color: #86aa71; /* Green clock */
-    font-weight: bold;
+/* Ensure the workspaces don't have sharp edges */
+#workspaces {
+    border-radius: 12px;
+    margin-left: 5px;
 }
 
-#tray {
-    padding-right: 15px;
-}
-
+/* Kept your 20px Power Icon */
 #custom-power {
-    color: #71aaa7; /* Teal accent for power profile */
+    color: #ff9800;
     font-weight: bold;
+    font-size: 20px;
     padding-right: 15px;
-}
-
-#battery.warning {
-    color: #f7768e; /* Red for warning */
-}
-
-#battery.critical {
-    color: #1a1b26;
-    background-color: #f7768e;
-    border-radius: 10px;
 }
