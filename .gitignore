@@ -7,7 +7,7 @@
 # 3. DO NOT ignore the specific folders we WANT to save
 # (The '!' un-ignores the file or folder)
 !/hypr/
-!/hypr/*
+!/hypr/**
 !/hypridle.conf
 
 !/waybar/
