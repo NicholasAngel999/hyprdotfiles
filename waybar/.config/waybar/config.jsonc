@@ -9,7 +9,7 @@
     
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "tray", "custom/power"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/power"],
 
 "hyprland/workspaces": {
         "format": "{icon}",
