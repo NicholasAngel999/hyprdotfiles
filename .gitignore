@@ -1,26 +1,20 @@
-# 1. Ignore EVERYTHING by default
-*
+# --- Zsh ---
+.zsh_history
+.zcompdump*
+*.zwc
 
-# 2. But... DO NOT ignore the .gitignore file itself
-!.gitignore
+# --- General temp files ---
+*.log
+*.cache
 
-# 3. DO NOT ignore the specific folders we WANT to save
-# (The '!' un-ignores the file or folder)
-!/hypr/
-!/hypr/**
-!/hypridle.conf
+# --- OS junk ---
+.DS_Store
+Thumbs.db
 
-!/waybar/
-!/waybar/**
+# --- Secrets ---
+.env
+*.key
+*.pem
 
-!/wofi/
-!/wofi/**
-
-!/swaync/
-!/swaync/**
-
-!/kitty/
-!/kitty/**
-
-!/nvim/
-!/nvim/**
+# --- Local overrides ---
+*.local

@@ -1,0 +1,37 @@
+add_newline = false
+
+format = """
+$directory$git_branch$git_status$cmd_duration
+$character
+"""
+
+# --- Directory ---
+[directory]
+style = "bold #ff7a00"
+truncation_length = 3
+truncate_to_repo = true
+
+# --- Prompt symbol ---
+[character]
+success_symbol = "[➜](bold #ff7a00)"
+error_symbol = "[➜](bold #ff3b3b)"
+
+# --- Git ---
+[git_branch]
+symbol = " "
+style = "bold #ff7a00"
+
+[git_status]
+style = "bold #ff3b3b"
+
+# --- Command timing ---
+[cmd_duration]
+min_time = 500
+format = "  [$duration](#ffb86c)"
+
+# --- Optional extras ---
+[hostname]
+disabled = true
+
+[username]
+disabled = true
