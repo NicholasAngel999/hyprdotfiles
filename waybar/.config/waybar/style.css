@@ -24,6 +24,17 @@ window#waybar {
     margin-left: 5px;
 }
 
+#workspaces button {
+  color: #ff9800;
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+#workspaces button.active{
+  color: #ffffff;
+  background-color: rgba(255, 152, 0, 0.2);
+  border-radius: 8px;
+}
 /* Kept your 20px Power Icon */
 #custom-power {
     color: #ff9800;

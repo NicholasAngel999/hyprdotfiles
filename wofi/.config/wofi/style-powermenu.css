@@ -3,10 +3,10 @@
 
 @define-color base     rgba(26, 27, 38, 0.95);
 @define-color surface0 #24283b;
-@define-color text     #c0caf5;
+@define-color text     #FFB347;
 @define-color subtext  #a9b1d6;
-@define-color green    #86aa71;
-@define-color teal     #71aaa7;
+@define-color orange2    #D97706;
+@define-color orange     #E67E22;
 
 window {
     background-color: @base;
