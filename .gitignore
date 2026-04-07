@@ -19,3 +19,7 @@ Thumbs.db
 # --- Local overrides ---
 *.local
 10000
+*.session
+.DS_Store
+*~
+*.swp
