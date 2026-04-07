@@ -5,3 +5,16 @@
 : 1775521455:0;z
 : 1775522514:0;z hypr
 : 1775525579:0;git add .
+: 1775525589:0;git commit -m "polishing"
+: 1775525592:0;git push
+: 1775525660:0;nvim ~/hyprdotfiles/waybar/.config/waybar/style.css
+: 1775525691:0;z
+: 1775526289:0;ls
+: 1775526435:0;ls ~/.config/wofi/
+: 1775526452:0;cat ~/.config/wofi/style-powermenu.css
+: 1775526479:0;nvim ~/.config/wofi/style-powermenu.css
+: 1775526609:0;nvim ~/hyprdotfiles/waybar/.config/waybar/scripts/select-power-profile.sh
+: 1775526650:0;nvim ~/.config/wofi/style-powermenu.css
+: 1775526723:0;cp ~/.config/wofi/style-powermenu.css ~/hyprdotfiles/wofi/.config/wofi/style-powermenu.css
+: 1775526728:0;cd
+: 1775526762:0;git add .

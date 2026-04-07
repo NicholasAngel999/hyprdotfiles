@@ -5,7 +5,7 @@ options="Performance\nBalanced\nPower Saver"
 
 # Show the menu using wofi in dmenu mode and capture the selection
 # Point -S to a file that doesn't exist
-selected=$(echo -e "$options" | wofi --dmenu --prompt "Select Power Profile:" --style ~/.config/wofi/style-powermenu.css)
+selected=$(echo -e "$options" | wofi --dmenu --hide-search --prompt "Power Profile:" --style ~/.config/wofi/style-powermenu.css)
 
 # Execute the command based on the selection
 case $selected in

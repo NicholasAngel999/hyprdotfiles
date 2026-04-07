@@ -1,118 +1,139 @@
-/* ~/.config/swaync/style.css */
-/* 212th ATTACK BATTALION THEME (Commander Cody) */
+/* 212th ATTACK BATTALION - Commander Cody */
 
-/* --- Define Colors --- */
-@define-color base      rgba(26, 27, 38, 0.95); /* TokyoNight Base */
-@define-color surface0  rgba(36, 40, 59, 0.95); 
-@define-color crust     #15161e;
-@define-color text      #c0caf5; 
-@define-color subtext   #a9b1d6; 
-@define-color cody_orange #ff9800; /* 212th Main Accent */
-@define-color cody_amber  #ffcc80; /* Highlight Accent */
-@define-color red       #f7768e; /* Critical/Cancel */
-@define-color overlay0  #4a517d; 
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    transition: none;
+}
 
 /* --- Notification Popups --- */
 .notification-window {
-    background-color: transparent; 
+    background-color: transparent;
+    padding: 8px;
 }
 
 .notification {
-    background-color: @base;
-    border: 2px solid @cody_orange; /* Orange border to match Waybar */
-    border-radius: 15px;            /* Rounded to match capsule */
-    margin: 8px;                    
+    background-color: rgba(26, 27, 38, 0.95);
+    border: 2px solid #ff9800;
+    border-radius: 15px;
+    margin: 6px;
     padding: 12px;
-    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2); /* Orange glow shadow */
-    font-family: "JetBrainsMono Nerd Font Bold";
-    font-size: 14px;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.15);
 }
 
 .notification.critical {
-    border: 2px solid @red;
+    border-color: #f7768e;
+    box-shadow: 0 4px 20px rgba(247, 118, 142, 0.2);
 }
 
 .notification-content {
-    padding: 5px;
-}
-
-.title {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: @text;
+    padding: 4px;
 }
 
 .app-name {
-    color: @cody_orange; 
+    color: #ff9800;
     font-weight: bold;
-    margin-bottom: 4px; 
+    font-size: 12px;
+}
+
+.title {
+    color: #cdd6f4;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .body {
-    color: @subtext;
-    font-weight: normal;
+    color: #a9b1d6;
+    font-size: 13px;
 }
 
-/* Close button */
+.time {
+    color: #595959;
+    font-size: 11px;
+}
+
 .close-button {
-    background-color: @surface0;
-    color: @red;
-    border-radius: 50%; 
-    min-width: 24px;
-    min-height: 24px;
-    margin-left: 10px;
+    background-color: transparent;
+    color: #595959;
+    border-radius: 50%;
+    min-width: 22px;
+    min-height: 22px;
 }
+
 .close-button:hover {
-    background-color: @red;
-    color: @crust;
+    background-color: #f7768e;
+    color: #1e1e2e;
 }
 
-/* Action buttons */
+/* --- Action Buttons --- */
 .notification-actions button {
-    background-color: @surface0;
-    color: @cody_orange;
-    border: 1px solid @cody_orange;
+    background-color: rgba(30, 30, 46, 0.95);
+    color: #ff9800;
+    border: 1px solid #ff9800;
     border-radius: 8px;
-    padding: 4px 8px;
-    margin: 5px;
+    padding: 4px 10px;
+    margin: 4px;
     font-weight: bold;
 }
+
 .notification-actions button:hover {
-    background-color: @cody_orange;
-    color: @base;
+    background-color: #ff9800;
+    color: #1e1e2e;
 }
 
-/* --- Control Center (Notification History) --- */
+/* --- Control Centre --- */
 .control-center {
-    background-color: @base;
-    border: 2px solid @cody_orange;
+    background-color: rgba(26, 27, 38, 0.97);
+    border: 2px solid #ff9800;
     border-radius: 15px;
-}
-
-.control-center .widget-title {
-    color: @text;
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 15px;
-    border-bottom: 1px solid @surface0;
+    padding: 8px;
+    box-shadow: 0 8px 32px rgba(255, 152, 0, 0.15);
 }
 
 .control-center .notification {
-    background-color: @surface0; 
-    border: 1px solid @overlay0; 
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(255, 152, 0, 0.3);
 }
 
-/* DND switch */
-.control-center .widget-dnd > switch:checked {
-    background-color: @cody_orange; 
-    color: @base; 
+.widget-title {
+    color: #cdd6f4;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 152, 0, 0.2);
 }
 
-/* Clear All button */
 .widget-title button {
-    background-color: @red;
-    color: @crust;
+    background-color: rgba(247, 118, 142, 0.2);
+    color: #f7768e;
+    border: 1px solid #f7768e;
     border-radius: 8px;
     font-weight: bold;
-    padding: 4px 8px;
+    padding: 4px 10px;
+}
+
+.widget-title button:hover {
+    background-color: #f7768e;
+    color: #1e1e2e;
+}
+
+/* --- DND Toggle --- */
+.widget-dnd {
+    padding: 10px 15px;
+    color: #cdd6f4;
+}
+
+.widget-dnd > switch {
+    border-radius: 12px;
+    border: 1px solid #595959;
+}
+
+.widget-dnd > switch:checked {
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+
+/* --- Scrolled Window --- */
+.control-center-list {
+    background-color: transparent;
 }

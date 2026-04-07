@@ -1,74 +1,64 @@
-/* ~/.config/wofi/style.css */
-/* 212th ATTACK BATTALION THEME (Commander Cody) */
+/* 212th ATTACK BATTALION - Commander Cody */
 
-/* --- Define Colors --- */
-@define-color base      #1a1b26; /* TokyoNight Dark */
-@define-color surface0  #24283b; 
-@define-color text      #c0caf5; 
-@define-color subtext   #a9b1d6; 
-@define-color cody_orange #ff9800; /* Solar Orange */
-@define-color cody_amber  #ffcc80; /* Highlight Amber */
-@define-color red       #f7768e; 
-
-/* --- Main Window --- */
-window {
-    background-color: rgba(26, 27, 38, 0.95); 
-    border: 2px solid @cody_orange; /* Orange border matching Waybar capsule */
-    border-radius: 15px;            /* Rounded corners matching the UI */
-    font-family: "JetBrainsMono Nerd Font", "MesloLGS NF"; 
+* {
+    font-family: "JetBrainsMono Nerd Font";
     font-size: 15px;
 }
 
-/* --- Search Input --- */
+window {
+    background-color: rgba(26, 27, 38, 0.95);
+    border: 2px solid #ff9800;
+    border-radius: 15px;
+    color: #cdd6f4;
+}
+
 #input {
-    background-color: @surface0;
-    color: @text;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 1px solid #ff9800;
+    border-radius: 10px;
     padding: 8px 12px;
-    margin: 10px;
-    border: 1px solid @cody_amber; /* Amber border for the search bar */
-    border-radius: 10px; 
-}
-
-/* --- Results Box --- */
-#inner-box {
-    margin: 5px;
-    padding: 10px;
-}
-
-#scroll {
-    margin-top: 5px;
-}
-
-/* --- Individual Entries --- */
-#entry {
-    padding: 8px 10px;
-    min-height: 40px;
-    border-radius: 10px; 
-    color: @subtext;
-}
-
-#entry:selected {
-    background-color: @cody_orange; /* Highlight in Orange */
-    color: @base;                   /* Dark text for readability */
+    margin: 10px 10px 5px 10px;
     outline: none;
 }
 
-/* --- Text Styling --- */
+#input:focus {
+    border-color: #ffcc80;
+}
+
+#inner-box {
+    margin: 5px;
+}
+
+#outer-box {
+    padding: 10px;
+}
+
+#entry {
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #a9b1d6;
+    margin: 2px 0;
+}
+
+#entry:selected {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
 #text {
-    color: @text; 
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 #text:selected {
-    color: @base;
+    color: #ff9800;
     font-weight: bold;
 }
 
-/* --- Icons --- */
 #img {
-  margin-right: 12px; 
-  min-height: 24px;   
-  min-width: 24px;    
-  padding-left: 5px;  
-  border-radius: 4px; 
+    margin-right: 10px;
+    min-height: 22px;
+    min-width: 22px;
+    border-radius: 4px;
 }

@@ -42,3 +42,57 @@ window#waybar {
     font-size: 20px;
     padding-right: 15px;
 }
+
+#network {
+    color: #ff9800;
+    padding: 0 10px;
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#bluetooth {
+    color: #ff9800;
+    padding: 0 10px;
+}
+
+#bluetooth.connected {
+    color: #ffcc80;
+}
+
+#bluetooth.disabled {
+    color: #595959;
+}
+
+#pulseaudio {
+    color: #ff9800;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    color: #595959;
+}
+
+#battery {
+    color: #ff9800;
+    padding: 0 10px;
+}
+
+#battery.warning {
+    color: #ffcc80;
+}
+
+#battery.critical {
+    color: #f7768e;
+}
+
+#clock {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#tray {
+    padding: 0 10px;
+}
