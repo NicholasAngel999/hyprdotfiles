@@ -9,7 +9,7 @@
     
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "custom/power"],
+    "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
 "hyprland/workspaces": {
         "format": "{icon}",
@@ -41,12 +41,19 @@
         "on-click": "pavucontrol"
     },
 
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱 {device_alias}",
+    "format-disabled": "󰂲",
+    "on-click": "kitty --class floating-tui -e bluetui"
+},
+
     "network": {
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠",
-        "on-click": "kitty --class nmtui-floating -e nmtui"
-    },
+    "format-wifi": "{essid} 󰤨",
+    "format-ethernet": "{ipaddr} 󰈀",
+    "format-disconnected": "󰤭 Disconnected",
+    "on-click": "kitty --class floating-tui -e impala-nm"
+},
 
     "battery": {
         "states": {
