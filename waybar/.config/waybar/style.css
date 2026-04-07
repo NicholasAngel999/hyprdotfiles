@@ -107,3 +107,12 @@ window#waybar {
 #custom-dnd.active {
     color: #f7768e;
 }
+
+#custom-dnd.notify {
+    color: #ffcc80;
+}
+
+#custom-dnd.active.notify {
+    color: #f7768e;
+    font-weight: bold;
+}

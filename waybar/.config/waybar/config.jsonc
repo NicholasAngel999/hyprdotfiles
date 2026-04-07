@@ -72,10 +72,10 @@
     },
 
   "custom/dnd": {
-    "exec": "~/.config/waybar/scripts/dnd.sh",
+    "exec": "~/hyprdotfiles/waybar/.config/waybar/scripts/dnd.sh",
     "return-type": "json",
     "interval": 2,
-    "on-click": "swaync-client -t -sw",
+    "on-click": "swaync-client --toggle-dnd",
     "format": "{}"
 },
 
