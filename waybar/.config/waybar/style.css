@@ -96,3 +96,14 @@ window#waybar {
 #tray {
     padding: 0 10px;
 }
+
+
+#custom-dnd {
+    color: #595959;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#custom-dnd.active {
+    color: #f7768e;
+}

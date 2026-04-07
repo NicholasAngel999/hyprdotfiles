@@ -9,7 +9,7 @@
     
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
+    "modules-right": ["tray", "custom/dnd", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
 "hyprland/workspaces": {
         "format": "{icon}",
@@ -69,7 +69,15 @@
     "tray": {
         "icon-size": 18,
         "spacing": 10
-    }, 
+    },
+
+  "custom/dnd": {
+    "exec": "~/.config/waybar/scripts/dnd.sh",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "swaync-client -t -sw",
+    "format": "{}"
+},
 
     "custom/power": {
         "exec": "~/.config/waybar/scripts/get-power-profile.sh",
