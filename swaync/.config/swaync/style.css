@@ -1,106 +1,134 @@
 /* ============================================
    --- 212th Attack Battalion ---
-   SwayNC Cody Theme
+   SwayNC "Commander Cody" Ultra-Polished v2
    ============================================ */
 
 * {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
     font-size: 13px;
-    border: none;
+    transition: all 0.2s ease-in-out;
 }
 
-/* --- Notification Center Panel --- */
-
-.notification-center {
-    background: rgba(26, 26, 24, 0.96);
-    border-radius: 14px;
-    border: 1px solid #8a3e10;
+/* --- Floating Pop-up Alerts (The "Pop") --- */
+.notification-row {
+    margin: 12px;
 }
 
-/* --- Notification Cards --- */
+.notification-row .notification {
+    background: rgba(26, 26, 24, 0.98);
+    border: 2px solid #c45c1a; /* Hard orange border for visibility */
+    border-radius: 12px;
+    padding: 16px;
+    /* Massive shadow to lift it off windows */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 
+                0 0 15px rgba(196, 92, 26, 0.2); 
+}
 
+/* Holographic Accent Strip for Pop-ups */
+.notification-row .notification-content {
+    border-left: 3px solid #c45c1a;
+    padding-left: 12px;
+    margin-left: 5px;
+    color: #e8e0d0;
+}
+
+/* --- Main Center Container (The Widget) --- */
+.control-center {
+    background: rgba(26, 26, 24, 0.98);
+    border-radius: 12px;
+    border: 2px solid #c45c1a;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+/* --- Notification Cards (Inside the Center) --- */
 .notification {
     background: rgba(36, 36, 32, 0.95);
-    border-radius: 10px;
+    border-radius: 8px;
     margin: 8px;
     padding: 12px;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
+    border: 1px solid #2a2926;
 }
 
 .notification:hover {
-    border: 1px solid #c45c1a;
-    background: rgba(42, 41, 38, 0.95);
+    background: rgba(42, 41, 38, 0.98);
+    border: 1px solid #d4621e;
+    box-shadow: 0 0 12px rgba(196, 92, 26, 0.3);
 }
 
-/* --- Title --- */
-
+/* --- Typography --- */
 .notification-title {
-    color: #e8e0d0;
-    font-weight: 600;
+    color: #ffffff; /* Bright white for pop */
+    font-weight: 700;
+    font-size: 14px;
 }
-
-/* --- Body --- */
-
-.notification-content {
-    color: #7a7268;
-}
-
-/* --- App Name --- */
 
 .notification-app-name {
-    color: #d4621e;
-    font-size: 11px;
+    color: #c45c1a;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
 }
 
-/* --- Time --- */
+.notification-content {
+    color: #e8e0d0;
+    margin-top: 4px;
+}
 
 .notification-time {
     color: #7a7268;
-    font-size: 11px;
+    font-size: 10px;
 }
 
-/* --- Close Button --- */
-
-.close-button {
-    color: #7a7268;
+/* --- Widgets (DND, Title, Buttons) --- */
+.widget-title {
+    color: #e8e0d0;
+    font-weight: 800;
+    margin: 10px;
 }
 
-.close-button:hover {
-    color: #c45c1a;
+.widget-title > button {
+    background: rgba(168, 56, 32, 0.2);
+    border: 1px solid #a83820;
+    color: #e8e0d0;
+    border-radius: 6px;
+    padding: 4px 10px;
 }
 
-/* --- Control Center (Right Panel) --- */
-
-.control-center {
-    background: rgba(26, 26, 24, 0.98);
-    border-radius: 14px;
-    border: 1px solid #8a3e10;
+.widget-title > button:hover {
+    background: #a83820;
+    color: #ffffff;
 }
-
-/* --- DND Widget --- */
 
 .widget-dnd {
     background: rgba(36, 36, 32, 0.9);
     border-radius: 8px;
-    padding: 8px;
-    margin: 6px;
+    padding: 10px;
+    margin: 5px 10px 15px 10px;
+    border: 1px solid #2a2926;
 }
 
-.widget-dnd.active {
-    background: rgba(168, 56, 32, 0.35);
+.widget-dnd > switch {
+    background: #2a2926;
+    border-radius: 12px;
+    border: 1px solid #c45c1a;
 }
 
-/* --- Buttons --- */
-
-button {
-    background: rgba(36, 36, 32, 0.9);
-    color: #e8e0d0;
-    border-radius: 8px;
-    padding: 6px;
+.widget-dnd > switch:checked {
+    background: #c45c1a;
 }
 
-button:hover {
-    background: rgba(42, 41, 38, 0.95);
+/* --- Close Button --- */
+.close-button {
+    background: transparent;
+    color: #7a7268;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+.close-button:hover {
     color: #c45c1a;
+    background: rgba(196, 92, 26, 0.1);
 }
