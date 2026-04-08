@@ -1,5 +1,5 @@
 #!/bin/bash
-# 212th Attack Battalion - Hyprland Install Script
+# 212th Attack Battalion - Commander Cody Edition
 # Target: CachyOS / Arch-based systems
 
 set -e
@@ -14,7 +14,7 @@ print_header() {
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 }
 
-print_header "212th Attack Battalion - Dotfiles Setup"
+print_header "Initializing 212th Attack Battalion Setup"
 
 # --- 1. Install yay (AUR helper) ---
 if ! command -v yay &>/dev/null; then
@@ -26,7 +26,7 @@ if ! command -v yay &>/dev/null; then
 fi
 
 # --- 2. Install pacman packages ---
-print_header "Installing core packages"
+print_header "Installing Core Republic Software"
 
 sudo pacman -S --needed --noconfirm \
   hyprland hyprlock hypridle hyprpaper hyprsunset \
@@ -44,17 +44,18 @@ sudo pacman -S --needed --noconfirm \
   power-profiles-daemon \
   polkit-kde-agent \
   ttf-jetbrains-mono-nerd \
+  inter-font \
   stow \
   zoxide fzf \
   git curl wget \
-  rust
+  rust \
+  papirus-icon-theme # Good fallback for your theme
 
 # --- 3. Install AUR packages ---
-print_header "Installing AUR packages"
+print_header "Installing Specialized AUR Gear"
 
 yay -S --needed --noconfirm \
   bluetui \
-  zapzap \
   visual-studio-code-electron-bin \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
@@ -62,77 +63,69 @@ yay -S --needed --noconfirm \
   hyprland-qtutils
 
 # --- 4. Install impala-nm via cargo ---
-print_header "Installing impala-nm"
+print_header "Installing impala-nm (TUI Network Manager)"
 
 if ! command -v impala-nm &>/dev/null; then
-  cargo install impala-nm
+  # Ensure rust/cargo is actually ready
+  if command -v cargo &>/dev/null; then
+    cargo install impala-nm
+  else
+    echo "Error: Cargo not found. Skipping impala-nm."
+  fi
 else
-  echo "impala-nm already installed"
+  echo "impala-nm already installed, skipping..."
 fi
 
-# --- 5. Ensure cargo in PATH ---
-print_header "Configuring cargo PATH"
+# Ensure cargo bin is in the current session's path for the rest of the script
+export PATH="$HOME/.cargo/bin:$PATH"
 
-if ! grep -q '.cargo/bin' "$HOME/.zshrc" 2>/dev/null; then
-  echo 'export PATH="$HOME/.cargo/bin:$PATH"' >>"$HOME/.zshrc"
-fi
-
-# --- 6. Enable services ---
-print_header "Enabling services"
+# --- 5. Enable services ---
+print_header "Booting up Droid Services"
 
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now power-profiles-daemon
 
-# --- 7. Clone or update dotfiles ---
-print_header "Setting up dotfiles"
+# --- 6. Clone or update dotfiles ---
+print_header "Syncing with HQ (GitHub)"
 
 if [ ! -d "$DOTFILES" ]; then
   git clone "$REPO" "$DOTFILES"
 else
-  echo "Dotfiles exist, pulling latest..."
+  echo "Dotfiles exist, pulling latest mission data..."
   git -C "$DOTFILES" pull
 fi
 
+# --- 7. Prep Config Directories ---
+# This prevents Stow from getting confused if directories already exist
+mkdir -p ~/.config/{hypr,waybar,wofi,swaync,kitty,fastfetch,starship}
+
 # --- 8. Stow dotfiles ---
-print_header "Stowing configuration"
+print_header "Deploying 212th Configurations"
 
 cd "$DOTFILES"
 
-for dir in hypr waybar wofi swaync kitty nvim starship zsh; do
+# Updated list to include everything we built today
+for dir in hypr waybar wofi swaync kitty nvim starship zsh fastfetch; do
   if [ -d "$dir" ]; then
-    echo "Stowing $dir"
+    echo "Stowing $dir..."
+    # --adopt ensures if local files exist, they are linked to the repo version
     stow --adopt "$dir"
   fi
 done
 
 # --- 9. Set default shell to zsh ---
-print_header "Setting default shell"
+print_header "Assigning ZSH to Commander"
 
 if [ "$SHELL" != "/usr/bin/zsh" ]; then
-  chsh -s /usr/bin/zsh
+  sudo chsh -s /usr/bin/zsh "$USER"
 fi
 
-# --- 10. Install zsh plugins (fallback safety) ---
-print_header "Ensuring zsh plugins"
-
-mkdir -p ~/.zsh/plugins
-
-[ -d ~/.zsh/plugins/zsh-autosuggestions ] ||
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
-
-[ -d ~/.zsh/plugins/zsh-syntax-highlighting ] ||
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
-
-# --- 11. fzf keybindings ---
-print_header "Configuring fzf"
-
-if [ ! -f ~/.fzf.zsh ]; then
-  [ -f /usr/share/fzf/key-bindings.zsh ] &&
-    echo "[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh" >>~/.zshrc
-fi
+# --- 10. Final Permissions ---
+print_header "Finalizing Permissions"
+chmod +x "$DOTFILES/waybar/.config/waybar/scripts/"*.sh
 
 # --- DONE ---
-print_header "Setup Complete"
+print_header "Mission Complete: 212th System Online"
 
-echo "Reboot or log out, then start Hyprland."
+echo "The coordinates are set. Reboot or log out to enter the 212th Battalion."
