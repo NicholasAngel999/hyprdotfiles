@@ -1,0 +1,6 @@
+# --- 212th Attack Battalion ---
+$mainMod = SUPER
+$terminal = kitty
+$menu = wofi --show drun
+
+

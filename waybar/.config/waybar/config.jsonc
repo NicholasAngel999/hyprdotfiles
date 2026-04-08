@@ -6,12 +6,12 @@
     "margin-right": 15,
     "height": 40,
     "spacing": 10,
-    
+
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "custom/dnd", "pulseaudio", "bluetooth", "network", "battery", "custom/power"],
 
-"hyprland/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -20,40 +20,40 @@
             "2": "2",
             "3": "3",
             "4": "4",
-            "5": "5",
+            "5": "5"
         },
         "persistent-workspaces": {
             "*": 5
         }
     },
-    
+
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%a %d %b  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
 
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-muted": " ",
+        "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
 
-  "bluetooth": {
-    "format": "󰂯",
-    "format-connected": "󰂱 {device_alias}",
-    "format-disabled": "󰂲",
-    "on-click": "kitty --class floating-tui -e bluetui"
-},
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-disabled": "󰂲",
+        "on-click": "kitty --class floating-tui -e bluetui"
+    },
 
     "network": {
-    "format-wifi": "{essid} 󰤨",
-    "format-ethernet": "{ipaddr} 󰈀",
-    "format-disconnected": "󰤭 Disconnected",
-    "on-click": "kitty --class floating-tui -e impala-nm"
-},
+        "format-wifi": "{essid} 󰤨",
+        "format-ethernet": "{ipaddr} 󰈀",
+        "format-disconnected": "󰤭 Disconnected",
+        "on-click": "kitty --class floating-tui -e impala-nm"
+    },
 
     "battery": {
         "states": {
@@ -71,20 +71,20 @@
         "spacing": 10
     },
 
-  "custom/dnd": {
-    "exec": "~/hyprdotfiles/waybar/.config/waybar/scripts/dnd.sh",
-    "return-type": "json",
-    "interval": 2,
-    "on-click": "swaync-client --toggle-dnd",
-    "format": "{}"
-},
+    "custom/dnd": {
+        "exec": "/home/cole/hyprdotfiles/waybar/.config/waybar/scripts/dnd.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "swaync-client --toggle-dnd",
+        "format": "{}"
+    },
 
     "custom/power": {
-        "exec": "~/.config/waybar/scripts/get-power-profile.sh",
+        "exec": "/home/cole/hyprdotfiles/waybar/.config/waybar/scripts/get-power-profile.sh",
         "return-type": "json",
         "interval": 2,
         "format": "{}",
-        "on-click": "~/.config/waybar/scripts/toggle-ppd.sh",
-        "on-click-right": "~/.config/waybar/scripts/select-power-profile.sh"
+        "on-click": "/home/cole/hyprdotfiles/waybar/.config/waybar/scripts/toggle-ppd.sh",
+        "on-click-right": "/home/cole/hyprdotfiles/waybar/.config/waybar/scripts/select-power-profile.sh"
     }
 }

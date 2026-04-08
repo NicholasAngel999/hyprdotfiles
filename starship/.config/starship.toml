@@ -1,3 +1,8 @@
+# ============================================
+# --- 212th Attack Battalion ---
+# Commander Cody Starship Prompt
+# ============================================
+
 add_newline = false
 
 format = """
@@ -7,29 +12,29 @@ $character
 
 # --- Directory ---
 [directory]
-style = "bold #ff7a00"
+style = "bold #c45c1a"
 truncation_length = 3
 truncate_to_repo = true
 
 # --- Prompt symbol ---
 [character]
-success_symbol = "[➜](bold #ff7a00)"
-error_symbol = "[➜](bold #ff3b3b)"
+success_symbol = "[➜](bold #c45c1a)"
+error_symbol   = "[➜](bold #a83820)"
 
 # --- Git ---
 [git_branch]
 symbol = " "
-style = "bold #ff7a00"
+style = "bold #d4621e"
 
 [git_status]
-style = "bold #ff3b3b"
+style = "bold #a83820"
 
 # --- Command timing ---
 [cmd_duration]
 min_time = 500
-format = "  [$duration](#ffb86c)"
+format = "  [$duration](#8a3e10)"
 
-# --- Optional extras ---
+# --- Disable noise ---
 [hostname]
 disabled = true
 

@@ -1,20 +1,27 @@
 #!/bin/bash
 
-PROFILE=$(powerprofilesctl get 2>/dev/null)
+# Get current profile
+PROFILE=$(powerprofilesctl get)
 
+# Map icons and tooltips
 case $PROFILE in
-performance)
+"performance")
   ICON="󰓅"
+  CLASS="performance"
   ;;
-balanced)
-  ICON="󰗑"
+"balanced")
+  ICON="⚖️"
+  CLASS="balanced"
   ;;
-power-saver)
-  ICON=""
+"power-saver")
+  ICON="🔋"
+  CLASS="power-saver"
   ;;
 *)
-  ICON="❓"
+  ICON="󰓅"
+  CLASS="unknown"
   ;;
 esac
 
-echo "{\"text\": \"$ICON\", \"tooltip\": \"Power Profile: $PROFILE\"}"
+# Output JSON for Waybar
+printf '{"text": "%s", "tooltip": "Power Profile: %s", "class": "%s"}\n' "$ICON" "$PROFILE" "$CLASS"

@@ -1,139 +1,106 @@
-/* 212th ATTACK BATTALION - Commander Cody */
+/* ============================================
+   --- 212th Attack Battalion ---
+   SwayNC Cody Theme
+   ============================================ */
 
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
-    transition: none;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    border: none;
 }
 
-/* --- Notification Popups --- */
-.notification-window {
-    background-color: transparent;
-    padding: 8px;
+/* --- Notification Center Panel --- */
+
+.notification-center {
+    background: rgba(26, 26, 24, 0.96);
+    border-radius: 14px;
+    border: 1px solid #8a3e10;
 }
+
+/* --- Notification Cards --- */
 
 .notification {
-    background-color: rgba(26, 27, 38, 0.95);
-    border: 2px solid #ff9800;
-    border-radius: 15px;
-    margin: 6px;
+    background: rgba(36, 36, 32, 0.95);
+    border-radius: 10px;
+    margin: 8px;
     padding: 12px;
-    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.15);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
-.notification.critical {
-    border-color: #f7768e;
-    box-shadow: 0 4px 20px rgba(247, 118, 142, 0.2);
+.notification:hover {
+    border: 1px solid #c45c1a;
+    background: rgba(42, 41, 38, 0.95);
 }
+
+/* --- Title --- */
+
+.notification-title {
+    color: #e8e0d0;
+    font-weight: 600;
+}
+
+/* --- Body --- */
 
 .notification-content {
-    padding: 4px;
+    color: #7a7268;
 }
 
-.app-name {
-    color: #ff9800;
-    font-weight: bold;
-    font-size: 12px;
-}
+/* --- App Name --- */
 
-.title {
-    color: #cdd6f4;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.body {
-    color: #a9b1d6;
-    font-size: 13px;
-}
-
-.time {
-    color: #595959;
+.notification-app-name {
+    color: #d4621e;
     font-size: 11px;
 }
 
+/* --- Time --- */
+
+.notification-time {
+    color: #7a7268;
+    font-size: 11px;
+}
+
+/* --- Close Button --- */
+
 .close-button {
-    background-color: transparent;
-    color: #595959;
-    border-radius: 50%;
-    min-width: 22px;
-    min-height: 22px;
+    color: #7a7268;
 }
 
 .close-button:hover {
-    background-color: #f7768e;
-    color: #1e1e2e;
+    color: #c45c1a;
 }
 
-/* --- Action Buttons --- */
-.notification-actions button {
-    background-color: rgba(30, 30, 46, 0.95);
-    color: #ff9800;
-    border: 1px solid #ff9800;
-    border-radius: 8px;
-    padding: 4px 10px;
-    margin: 4px;
-    font-weight: bold;
-}
+/* --- Control Center (Right Panel) --- */
 
-.notification-actions button:hover {
-    background-color: #ff9800;
-    color: #1e1e2e;
-}
-
-/* --- Control Centre --- */
 .control-center {
-    background-color: rgba(26, 27, 38, 0.97);
-    border: 2px solid #ff9800;
-    border-radius: 15px;
-    padding: 8px;
-    box-shadow: 0 8px 32px rgba(255, 152, 0, 0.15);
+    background: rgba(26, 26, 24, 0.98);
+    border-radius: 14px;
+    border: 1px solid #8a3e10;
 }
 
-.control-center .notification {
-    background-color: rgba(30, 30, 46, 0.95);
-    border: 1px solid rgba(255, 152, 0, 0.3);
-}
+/* --- DND Widget --- */
 
-.widget-title {
-    color: #cdd6f4;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-bottom: 1px solid rgba(255, 152, 0, 0.2);
-}
-
-.widget-title button {
-    background-color: rgba(247, 118, 142, 0.2);
-    color: #f7768e;
-    border: 1px solid #f7768e;
-    border-radius: 8px;
-    font-weight: bold;
-    padding: 4px 10px;
-}
-
-.widget-title button:hover {
-    background-color: #f7768e;
-    color: #1e1e2e;
-}
-
-/* --- DND Toggle --- */
 .widget-dnd {
-    padding: 10px 15px;
-    color: #cdd6f4;
+    background: rgba(36, 36, 32, 0.9);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 6px;
 }
 
-.widget-dnd > switch {
-    border-radius: 12px;
-    border: 1px solid #595959;
+.widget-dnd.active {
+    background: rgba(168, 56, 32, 0.35);
 }
 
-.widget-dnd > switch:checked {
-    background-color: #ff9800;
-    border-color: #ff9800;
+/* --- Buttons --- */
+
+button {
+    background: rgba(36, 36, 32, 0.9);
+    color: #e8e0d0;
+    border-radius: 8px;
+    padding: 6px;
 }
 
-/* --- Scrolled Window --- */
-.control-center-list {
-    background-color: transparent;
+button:hover {
+    background: rgba(42, 41, 38, 0.95);
+    color: #c45c1a;
 }

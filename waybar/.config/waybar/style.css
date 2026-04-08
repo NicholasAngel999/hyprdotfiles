@@ -1,118 +1,180 @@
-/* --- Floating Capsule Theme --- */
+/* ============================================
+   --- 212th Attack Battalion ---
+   Waybar Cody Theme
+   ============================================ */
+
+@define-color bg_deep    rgba(26, 26, 24, 0.92);
+@define-color bg_surface rgba(36, 36, 32, 0.95);
+@define-color bg_hover   rgba(42, 41, 38, 0.95);
+@define-color orange     #c45c1a;
+@define-color orange2    #d4621e;
+@define-color orange_dim #8a3e10;
+@define-color text       #e8e0d0;
+@define-color muted      #7a7268;
+@define-color red        #a83820;
 
 * {
     border: none;
-    border-radius: 12px; /* Adds rounded corners to all modules */
-    font-family: "JetBrainsMono Nerd Font", "MesloLGS NF", sans-serif;
-    font-size: 15px;
+    border-radius: 0;
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(26, 27, 38, 0.85); /* TokyoNight Dark */
-    border: 2px solid #ff9800;                 /* Orange wraps ALL the way around */
-    border-radius: 15px;                       /* Smooth rounded corners for the bar */
-    color: #c0caf5;
-    margin: 10px 15px;                         /* Adds space around the bar so it "floats" */
+    background-color: @bg_deep;
+    border: 2px solid @orange_dim;
+    border-radius: 10px;
+    color: @text;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.3s;
 }
 
-/* Ensure the workspaces don't have sharp edges */
+/* ---- Workspaces ---- */
+
 #workspaces {
-    border-radius: 12px;
-    margin-left: 5px;
+    border-radius: 8px;
+    margin: 4px 4px;
+    padding: 0 4px;
 }
 
 #workspaces button {
-  color: #ff9800;
-  padding-bottom: 4px;
-  margin-bottom: 2px;
+    color: @muted;
+    background: transparent;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 2px 2px;
+    transition: all 0.2s;
 }
 
-#workspaces button.active{
-  color: #ffffff;
-  background-color: rgba(255, 152, 0, 0.2);
-  border-radius: 8px;
+#workspaces button:hover {
+    color: @text;
+    background: @bg_hover;
 }
-/* Kept your 20px Power Icon */
+
+#workspaces button.active {
+    color: @orange;
+    background: rgba(196, 92, 26, 0.15);
+    border-bottom: 2px solid @orange;
+    border-radius: 6px 6px 4px 4px;
+}
+
+#workspaces button.urgent {
+    color: @red;
+    background: rgba(168, 56, 32, 0.2);
+}
+
+/* ---- Clock ---- */
+
+#clock {
+    color: @text;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0 12px;
+    letter-spacing: 0.5px;
+}
+
+/* ---- Shared module style ---- */
+
+#network,
+#bluetooth,
+#pulseaudio,
+#battery,
+#tray,
+#custom-dnd,
 #custom-power {
-    color: #ff9800;
-    font-weight: bold;
-    font-size: 20px;
-    padding-right: 15px;
+    color: @muted;
+    padding: 0 8px;
+    transition: color 0.2s;
 }
+
+/* ---- Network ---- */
 
 #network {
-    color: #ff9800;
-    padding: 0 10px;
+    color: @muted;
+}
+
+#network.wifi {
+    color: @text;
 }
 
 #network.disconnected {
-    color: #f7768e;
+    color: @red;
 }
 
-#bluetooth {
-    color: #ff9800;
-    padding: 0 10px;
-}
+/* ---- Bluetooth ---- */
 
 #bluetooth.connected {
-    color: #ffcc80;
+    color: @orange;
 }
 
 #bluetooth.disabled {
-    color: #595959;
+    color: @muted;
 }
 
+/* ---- Audio ---- */
+
 #pulseaudio {
-    color: #ff9800;
-    padding: 0 10px;
+    color: @text;
 }
 
 #pulseaudio.muted {
-    color: #595959;
+    color: @muted;
 }
 
+/* ---- Battery ---- */
+
 #battery {
-    color: #ff9800;
-    padding: 0 10px;
+    color: @text;
+}
+
+#battery.charging {
+    color: @orange;
 }
 
 #battery.warning {
-    color: #ffcc80;
+    color: @orange2;
 }
 
 #battery.critical {
-    color: #f7768e;
+    color: @red;
 }
 
-#clock {
-    color: #ffffff;
-    font-weight: bold;
-    padding: 0 10px;
+/* ---- Power profile ---- */
+
+#custom-power {
+    color: @orange;
+    font-size: 14px;
+    padding-right: 12px;
 }
 
-#tray {
-    padding: 0 10px;
-}
-
+/* ---- DND ---- */
 
 #custom-dnd {
-    color: #595959;
-    padding: 0 10px;
-    font-size: 16px;
+    color: @muted;
+    font-size: 14px;
 }
 
 #custom-dnd.active {
-    color: #f7768e;
+    color: @red;
 }
 
 #custom-dnd.notify {
-    color: #ffcc80;
+    color: @orange2;
 }
 
-#custom-dnd.active.notify {
-    color: #f7768e;
-    font-weight: bold;
+/* ---- Tray ---- */
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @orange;
 }
